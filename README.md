@@ -1,2 +1,2 @@
 # discord-bot-main
-test
+just the source code of my discord bot
