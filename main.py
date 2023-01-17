@@ -184,4 +184,4 @@ async def level_up(users, user, channel):
 
 
 #run the bot with the token
-bot.run("MTAwMjY0MDUxNDk1NDMxMzgyMQ.GSTHDs.6Oj_Hj4AoVy-Z2ufN1zhgZTWchiphV6GEzwECY")
+bot.run()
