@@ -1,2 +1,2 @@
 # discord-bot-main
-test
+tests
