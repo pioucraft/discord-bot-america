@@ -6,6 +6,7 @@ import os
 import youtube_dl
 import json
 
+
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix = "!?!", intents = intents)
 os.chdir(r"/home/pioucraft/Documents/programinc/discord-bot-main/")
@@ -103,7 +104,7 @@ async def on_message(message):
     message.content = message.content.replace("!", "")
     message.content = message.content.replace("?", "")
     message.content = message.content.replace("?", "")
-    if str(message.author.id) != "952547307205853225":
+    if not message.author.bot:
             with open("users.json", "r") as f:
                 users = json.load(f)
     
@@ -150,7 +151,7 @@ async def lovecalc(interaction: discord.Interaction, user1: discord.User, user2:
 
 #functions
 async def update_data(users, user, letters):
-    if str(user.id) != "952547307205853225":
+    if not user.bot:
         if not str(user.id) in users:
             users[str(user.id)] = {}
             users[str(user.id)]["experience"] = letters
@@ -184,4 +185,6 @@ async def level_up(users, user, channel):
 
 
 #run the bot with the token
-bot.run("MTAwMjY0MDUxNDk1NDMxMzgyMQ.GSTHDs.6Oj_Hj4AoVy-Z2ufN1zhgZTWchiphV6GEzwECY")
+token = open(".env")
+token = token.read()
+bot.run(token)
