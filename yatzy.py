@@ -820,4 +820,3 @@ elif reponse_A == "pair":
     elif str(a4) and str(a5) == 6:
         point_A += 2
 #elif reponse_B == "0":
-
