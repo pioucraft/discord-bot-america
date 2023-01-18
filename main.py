@@ -149,6 +149,7 @@ async def update_data(users, user, letters):
     if not user.bot:
         if not str(user.id) in users:
             users[str(user.id)] = {}
+        if not "experience" in users[str(user.id)]:
             users[str(user.id)]["experience"] = letters
             users[str(user.id)]["level"] = 1
 
@@ -179,7 +180,14 @@ async def level_up(users, user, channel):
             await channel.send("bravo {} tu as atteint le niveau 20, tu vas donc recevoir le role americain tah l'americain".format(user.mention))
             await user.add_roles(discord.utils.get(user.guild.roles, name="tah l'americain"))
             
+
+'''
+politics part
+
+'''
+@bot.tree.command(name="drop", description="drop une lootbox avec des politiciens et des armes dedans")
+async def drop():
+    print("drop")
+
 #run the bot with the token
-token = open(".env")
-token = token.read()
 bot.run(token)
