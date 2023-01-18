@@ -144,8 +144,6 @@ async def on_message(message):
 
 
 
-
-#functions
 #update the user data if not in users.json
 async def update_data(users, user, letters):
     if not user.bot:
@@ -180,9 +178,7 @@ async def level_up(users, user, channel):
         if lvl_end >= 20 and not discord.utils.get(user.guild.roles, name="tah l'americain") in user.roles:
             await channel.send("bravo {} tu as atteint le niveau 20, tu vas donc recevoir le role americain tah l'americain".format(user.mention))
             await user.add_roles(discord.utils.get(user.guild.roles, name="tah l'americain"))
-#functions end
-
-
+            
 #run the bot with the token
 token = open(".env")
 token = token.read()
