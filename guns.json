@@ -1,0 +1,35 @@
+{
+    "Mitrailleuse Kalachnikov": {
+        "description": "une arme a feu automatique qui utilise le mécanisme de l'ak-47 mais adapté pour des munitions plus puissantes"
+    },
+    "Colt M1911": {
+        "description": "petit pistolet semi-automatique américain qui se recharge par court recul du canon"
+    },
+    "HK MP5": {
+        "description": "pistolet automatique allemand souvent utilisé par la police et les services spéciaux dans le monde entier"
+    },
+    "Heckler & Koch G3": {
+        "description": "arme automatique légère française qui a durant la guère froide été adopté par la plus part des pays de l'OTAN"
+    },
+    "G3": {
+        "description": "arme allemande qui a été dévloppé en colaboration avec les espagnols après la deuxiemme guerre mondiale"
+    },
+    "AR-15": {
+        "description": "arme semi-automatique légère basée sur le design du colt AR-15 avec beaucoup de variations"
+    },
+    "RPG-7": {
+        "description": "lance roquettes portable soviétique léger qui a été crée durant la guerre froide en 1961"
+    },
+    "UZI": {
+        "description": "arme automatique Israéliene designée par le major uziel uzi gal dans les anées 40 dont le design a été terminé en 1950"
+    },
+    "ak-47": {
+        "description": "arme soviétique automatique très connue dans le monde dont le nombre 47 fait référence a l'anée de fin de production"
+    },
+    "Thompson M192 Machine Gun": {
+        "description": "arme américaine disposant d'un pied pour pouvoir le poser sur le sol et pouvoir se camoufler en tirant avec "
+    },
+    "Accuracy International Fusil Sniper AS50": {
+        "description": "sniper anglais qui dispose d'une précision hors-norme et construite pour servir les armées americaines et anglaises"
+    }
+}
