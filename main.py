@@ -6,7 +6,7 @@ import os
 import youtube_dl
 import json
 
-
+#set the client and the chdir
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix = "!?!", intents = intents)
 os.chdir(r"/home/pioucraft/Documents/programinc/discord-bot-main/")
@@ -15,6 +15,7 @@ os.chdir(r"/home/pioucraft/Documents/programinc/discord-bot-main/")
 @bot.event
 async def on_ready():
     print("bot is ready")
+    #sync commands
     try:
         synced = await bot.tree.sync()
         print(f"synced {len(synced)} commands")
@@ -33,19 +34,23 @@ async def play(interaction: discord.Interaction, music: str):
         FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5', 'options': '-vn'}
         YDL_OPTIONS = {'format': 'bestaudio'}
         if music.startswith("https://"):
+            #load an url
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 info = ydl.extract_info(music, download=False)
                 url2 = info['formats'][0]['url']
         else:
+            #search on youtube
             with youtube_dl.YoutubeDL(YDL_OPTIONS) as ydl:
                 url = f"ytsearch: {music}"
                 info = ydl.extract_info(url, download=False)['entries'][0]
                 url2 = info['formats'][0]["url"]
+        #play the music
         source = FFmpegPCMAudio(url2, **FFMPEG_OPTIONS)
         player = voice.play(source)
 
     else:
         await interaction.response.send_message("merci de rejoindre un salon vocal et de réessayer la commande")
+
 #stop the music
 @bot.tree.command(name="stop-music", description="le bot va arrêter de jouer la musique")
 async def level(interaction: discord.Interaction):
@@ -61,7 +66,7 @@ async def level(interaction: discord.Interaction, user: discord.User):
     with open("users.json", "r") as f:
         users = json.load(f)
     
-    
+    #set an embed
     embed = discord.Embed(type = "rich", title = "niveau", description = f"{user.mention} est niveau {users[str(user.id)]['level']} et a {users[str(user.id)]['experience']} xp", color=0x2e60aa)
     embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
     await interaction.response.send_message(embed=embed)
@@ -72,7 +77,7 @@ async def level(interaction: discord.Interaction, user: discord.User):
     with open("users.json", "r") as f:
         users = json.load(f)
     
-    
+    #set an embed
     embed = discord.Embed(type = "rich", title = "niveau exact", description = f"{user.mention} est niveau {str(float(users[str(user.id)]['experience']) ** (1/4))} et a {users[str(user.id)]['experience']} xp", color=0x2e60aa)
     embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
     await interaction.response.send_message(embed=embed)
@@ -83,6 +88,7 @@ async def level(interaction: discord.Interaction, user: discord.User):
 async def on_member_join(member):
     channel = bot.get_channel(1062012487173681152)
     bienvenue = bot.get_channel(1050103281315233852)
+    #set an embed
     embed = discord.Embed(type = "rich", title = "bienvenue", description = f"bienvenue {member.mention} sur america, n'oublie pas de regarder {bienvenue.mention}", color=0x2e60aa)
     embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
     await channel.send(embed=embed)
@@ -136,20 +142,11 @@ async def on_message(message):
                 print("stern")
 
 
-#lovecalc
-@bot.tree.command(name = "lovecalc", description= "calcule la probabilité qu'un membre se mette en couple avec un autre membre")
-async def lovecalc(interaction: discord.Interaction, user1: discord.User, user2: discord.User):
-    percent = int(user1.id) * int(user2.id)
-    percent = "0." + str(percent)
-    percent = float(percent) * 100
-    percent = int(percent)
-    await interaction.response.send_message(f"{user1.mention} et {user2.mention} ont {str(percent)}% de chances de se mettre en couple dans le futur")
-
-
 
 
 
 #functions
+#update the user data if not in users.json
 async def update_data(users, user, letters):
     if not user.bot:
         if not str(user.id) in users:
@@ -157,6 +154,7 @@ async def update_data(users, user, letters):
             users[str(user.id)]["experience"] = letters
             users[str(user.id)]["level"] = 1
 
+#level up the user if enough xp
 async def level_up(users, user, channel):
     experience = users[str(user.id)]["experience"]
     lvl_start = users[str(user.id)]["level"]
@@ -166,6 +164,7 @@ async def level_up(users, user, channel):
         await channel.send("{} a atteint le niveau {}".format(user.mention, lvl_end))
         users[str(user.id)]["level"] = lvl_end
 
+        #add roles
         if lvl_end >= 5 and not discord.utils.get(user.guild.roles, name="americain bg") in user.roles:
             await channel.send("bravo {} tu as atteint le niveau 5, tu vas donc recevoir le role americain bg".format(user.mention))
             await user.add_roles(discord.utils.get(user.guild.roles, name="americain bg"))
