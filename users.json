@@ -1,1 +1,9 @@
-{"774910391343382558": {"experience": 6, "level": 1}}
+{
+    "774910391343382558": {
+        "experience": 12,
+        "level": 1,
+        "money": 1,
+        "guns": {},
+        "politics": {}
+    }
+}

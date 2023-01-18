@@ -5,6 +5,7 @@ from discord import app_commands
 import os
 import youtube_dl
 import json
+import random
 
 #set the client and the chdir
 intents = discord.Intents().all()
@@ -122,7 +123,7 @@ async def on_message(message):
             await level_up(users, message.author, message.channel)
 
             with open("users.json", "w") as f:
-                json.dump(users, f)
+                json.dump(users, f, indent=4)
 
 
             if message.content.endswith('quoi'):
@@ -186,8 +187,34 @@ politics part
 
 '''
 @bot.tree.command(name="drop", description="drop une lootbox avec des politiciens et des armes dedans")
-async def drop():
-    print("drop")
+async def drop(interaction: discord.interactions):
+    with open("politics.json", "r") as f:
+        politics = json.load(f)
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    await update_politic_data(interaction.user, users)
+    with open("users.json", "w") as f:
+        json.dump(users, f, indent=4)
+        
+    if random.randint(1, 1) == 1:
+        politic = random.randint(1, 46)
+        politic_name = politics[politic]["presidentName"]
+        embed = discord.Embed(type = "rich", title = "un politicien", description = f"bravo tu as trouvé {politic_name}", color=0x2e60aa)
+        await interaction.response.send_message(embed=embed)
+
+
+
+    elif random.randint(1, 5) == 3:
+        print("")
+
+async def update_politic_data(user, users):
+    if not user.bot:
+        if not str(user.id) in users:
+            users[str(user.id)] = {}
+        if not "politics" in users[str(user.id)]:
+            users[str(user.id)]["money"] = 1
+            users[str(user.id)]["guns"] = {}
+            users[str(user.id)]["politics"] = {}
 
 #run the bot with the token
 bot.run(token)
