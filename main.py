@@ -190,22 +190,35 @@ politics part
 async def drop(interaction: discord.interactions):
     with open("politics.json", "r") as f:
         politics = json.load(f)
-    with open("users.json", "r") as f:
-        users = json.load(f)
-    await update_politic_data(interaction.user, users)
-    with open("users.json", "w") as f:
-        json.dump(users, f, indent=4)
-        
-    if random.randint(1, 1) == 1:
+    #1/10 chance
+    if random.randint(1, 1) == 2:
         politic = random.randint(1, 46)
         politic_name = politics[politic]["presidentName"]
         embed = discord.Embed(type = "rich", title = "un politicien", description = f"bravo tu as trouvé {politic_name}", color=0x2e60aa)
+        embed.set_image(url = politics[politic]["imgThumb"])
         await interaction.response.send_message(embed=embed)
+        #save the politic to the users.json
+        with open("users.json", "r") as f:
+            users = json.load(f)
+        await update_politic_data(interaction.user, users)
+        users[str(interaction.user.id)]["politics"]["number"] += 1
+        politic_id = str(politics[politic]["_id"])
+        users[str(interaction.user.id)]["politics"][politic_id] = True
+        with open("users.json", "w") as f:
+            json.dump(users, f, indent=4)
+
+    elif random.randint(1, 1) == 1:
+        money = random.randint(10, 1000)
+        with open("users.json", "r") as f:
+            users = json.load(f)
+        await update_politic_data(interaction.user, users)
+        users[str(interaction.user.id)]["money"] = int(users[str(interaction.user.id)]["money"]) + money
+        with open("users.json", "w") as f:
+            json.dump(users, f, indent=4)
 
 
 
-    elif random.randint(1, 5) == 3:
-        print("")
+
 
 async def update_politic_data(user, users):
     if not user.bot:
@@ -214,7 +227,9 @@ async def update_politic_data(user, users):
         if not "politics" in users[str(user.id)]:
             users[str(user.id)]["money"] = 1
             users[str(user.id)]["guns"] = {}
+            users[str(user.id)]["guns"]["number"] = 0
             users[str(user.id)]["politics"] = {}
+            users[str(user.id)]["politics"]["number"] = 0
 
 #run the bot with the token
 bot.run(token)
