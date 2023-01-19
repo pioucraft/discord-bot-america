@@ -1,35 +1,52 @@
-{
-    "Mitrailleuse Kalachnikov": {
-        "description": "une arme a feu automatique qui utilise le mécanisme de l'ak-47 mais adapté pour des munitions plus puissantes"
+[
+    {
+        "name": "Mitrailleuse Kalachnikov",
+        "description": "une arme a feu automatique qui utilise le mécanisme de l'ak-47 mais adapté pour des munitions plus puissantes",
+        "_id": "1"
     },
-    "Colt M1911": {
-        "description": "petit pistolet semi-automatique américain qui se recharge par court recul du canon"
+    {
+        "name": "Colt M1911",
+        "description": "petit pistolet semi-automatique américain qui se recharge par court recul du canon",
+        "_id": "2"
     },
-    "HK MP5": {
-        "description": "pistolet automatique allemand souvent utilisé par la police et les services spéciaux dans le monde entier"
+    {
+        "name": "HK MP5",
+        "description": "pistolet automatique allemand souvent utilisé par la police et les services spéciaux dans le monde entier",
+        "_id": "3"
     },
-    "Heckler & Koch G3": {
-        "description": "arme automatique légère française qui a durant la guère froide été adopté par la plus part des pays de l'OTAN"
+    {
+        "name": "G3",
+        "description": "arme allemande qui a été dévloppé en colaboration avec les espagnols après la deuxiemme guerre mondiale",
+        "_id": "4"
     },
-    "G3": {
-        "description": "arme allemande qui a été dévloppé en colaboration avec les espagnols après la deuxiemme guerre mondiale"
+    {
+        "name": "AR-15",
+        "description": "arme semi-automatique légère basée sur le design du colt AR-15 avec beaucoup de variations",
+        "_id": "5"
     },
-    "AR-15": {
-        "description": "arme semi-automatique légère basée sur le design du colt AR-15 avec beaucoup de variations"
+    {
+        "name": "RPG-7",
+        "description": "lance roquettes portable soviétique léger qui a été crée durant la guerre froide en 1961",
+        "_id": "6"
     },
-    "RPG-7": {
-        "description": "lance roquettes portable soviétique léger qui a été crée durant la guerre froide en 1961"
+    {
+        "name": "UZI",
+        "description": "arme automatique Israéliene designée par le major uziel uzi gal dans les anées 40 dont le design a été terminé en 1950",
+        "_id": "7"
     },
-    "UZI": {
-        "description": "arme automatique Israéliene designée par le major uziel uzi gal dans les anées 40 dont le design a été terminé en 1950"
+    {
+        "name": "ak-47",
+        "description": "arme soviétique automatique très connue dans le monde dont le nombre 47 fait référence a l'anée de fin de production",
+        "_id": "8"
     },
-    "ak-47": {
-        "description": "arme soviétique automatique très connue dans le monde dont le nombre 47 fait référence a l'anée de fin de production"
+    {
+        "name": "Thompson M192 Machine Gun",
+        "description": "arme américaine disposant d'un pied pour pouvoir le poser sur le sol et pouvoir se camoufler en tirant avec ",
+        "_id": "9"
     },
-    "Thompson M192 Machine Gun": {
-        "description": "arme américaine disposant d'un pied pour pouvoir le poser sur le sol et pouvoir se camoufler en tirant avec "
-    },
-    "Accuracy International Fusil Sniper AS50": {
-        "description": "sniper anglais qui dispose d'une précision hors-norme et construite pour servir les armées americaines et anglaises"
+    {
+        "name": "Accuracy International Fusil Sniper AS50",
+        "description": "sniper anglais qui dispose d'une précision hors-norme et construite pour servir les armées americaines et anglaises",
+        "_id": "10"
     }
-}
+]

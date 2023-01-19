@@ -186,29 +186,70 @@ async def level_up(users, user, channel):
 politics part
 
 '''
+#/drop command
 @bot.tree.command(name="drop", description="drop une lootbox avec des politiciens et des armes dedans")
 async def drop(interaction: discord.interactions):
     with open("politics.json", "r") as f:
         politics = json.load(f)
-    #1/10 chance
+    #get a politic
     if random.randint(1, 1) == 2:
-        politic = random.randint(1, 46)
+        politic = random.randint(0, 45)
         politic_name = politics[politic]["presidentName"]
-        embed = discord.Embed(type = "rich", title = "un politicien", description = f"bravo tu as trouvé {politic_name}", color=0x2e60aa)
+        party = politics[politic]["politicalParty"]
+        politic_id = str(politics[politic]["_id"])
+        embed = discord.Embed(type = "rich", title = politic_name, description = f"bravo, tu as gagneé {politic_name} du parti {party}", color=0x2e60aa)
         embed.set_image(url = politics[politic]["imgThumb"])
         await interaction.response.send_message(embed=embed)
+
         #save the politic to the users.json
+        with open("users.json", "r") as f:
+                users = json.load(f)
+        if not politic_id in users[str(interaction.user.id)]["politics"]:
+            await update_politic_data(interaction.user, users)
+            users[str(interaction.user.id)]["politics"]["number"] += 1
+            users[str(interaction.user.id)]["politics"][politic_id] = True
+            with open("users.json", "w") as f:
+                json.dump(users, f, indent=4)
+        else:
+            await interaction.response.send_message("tu as déja ce politicien")
+
+    #get a gun
+    elif random.randint(1, 1) == 1:
+        with open("guns.json", "r") as f:
+            guns = json.load(f)
+        gun = random.randint(0, 9)
+        gun_name = guns[gun]["name"]
+        gun_id = guns[gun]["_id"]
+        rarity = random.randint(1, 5)
+        basefirerate = random.randint(10, 100)
+        firerate = basefirerate * rarity
+        embed = discord.Embed(type="rich", title=gun_name, description=f"bravo tu as gagné un/une {gun_name} qui fait {str(firerate)} dégats par seconde et qui est de rareté {await rarity_name(rarity)}")
+        await interaction.response.send_message(embed=embed)
+
+        #store the data of the guns into users.json
         with open("users.json", "r") as f:
             users = json.load(f)
         await update_politic_data(interaction.user, users)
-        users[str(interaction.user.id)]["politics"]["number"] += 1
-        politic_id = str(politics[politic]["_id"])
-        users[str(interaction.user.id)]["politics"][politic_id] = True
+        if not gun_id in users[str(interaction.user.id)]["guns"]:
+            users[str(interaction.user.id)]["guns"]["number"] += 1
+            users[str(interaction.user.id)]["guns"][gun_id] = {}
+            users[str(interaction.user.id)]["guns"][gun_id]["rarity"] = str(rarity)
+            users[str(interaction.user.id)]["guns"][gun_id]["basefirerate"] = str(basefirerate)
+            users[str(interaction.user.id)]["guns"][gun_id]["firerate"] = str(firerate)
+        elif firerate > int(users[str(interaction.user.id)]["guns"][gun_id]["firerate"]):
+            users[str(interaction.user.id)]["guns"][gun_id] = {}
+            users[str(interaction.user.id)]["guns"][gun_id]["rarity"] = str(rarity)
+            users[str(interaction.user.id)]["guns"][gun_id]["basefirerate"] = str(basefirerate)
+            users[str(interaction.user.id)]["guns"][gun_id]["firerate"] = str(firerate)
         with open("users.json", "w") as f:
             json.dump(users, f, indent=4)
 
+
+
+    #get money
     elif random.randint(1, 1) == 1:
-        money = random.randint(10, 1000)
+        money = random.randint(1, 100)
+        await interaction.response.send_message(f"bravo tu as gagné {str(money)} $")
         with open("users.json", "r") as f:
             users = json.load(f)
         await update_politic_data(interaction.user, users)
@@ -216,6 +257,7 @@ async def drop(interaction: discord.interactions):
         with open("users.json", "w") as f:
             json.dump(users, f, indent=4)
 
+    
 
 
 
@@ -230,6 +272,19 @@ async def update_politic_data(user, users):
             users[str(user.id)]["guns"]["number"] = 0
             users[str(user.id)]["politics"] = {}
             users[str(user.id)]["politics"]["number"] = 0
+
+async def rarity_name(rarity):
+    if rarity == 1:
+        rarity = "common"
+    elif rarity == 2:
+        rarity = "uncommon"
+    elif rarity == 3:
+        rarity = "rare"
+    elif rarity == 4:
+        rarity = "epic"
+    elif rarity == 5:
+        rarity = "legendary"
+    return rarity
 
 #run the bot with the token
 bot.run(token)
