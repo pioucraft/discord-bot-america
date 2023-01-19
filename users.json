@@ -1,6 +1,6 @@
 {
     "774910391343382558": {
-        "money": 2825,
+        "money": 1821,
         "guns": {
             "number": 0
         },
@@ -9,5 +9,16 @@
         },
         "experience": 2,
         "level": 1
+    },
+    "1065605685280251954": {
+        "experience": 0,
+        "level": 1,
+        "money": 5,
+        "guns": {
+            "number": 0
+        },
+        "politics": {
+            "number": 0
+        }
     }
 }

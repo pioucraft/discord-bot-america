@@ -257,7 +257,32 @@ async def drop(interaction: discord.interactions):
         with open("users.json", "w") as f:
             json.dump(users, f, indent=4)
 
+#show the money
+@bot.tree.command(name="money", description="montre l'argent d'un utilisateur")
+async def drop(interaction: discord.interactions, user: discord.User):
+    with open("users.json", "r") as f:
+            users = json.load(f)
+    embed = discord.Embed(type = "rich", title = "argent", description = f"{user.mention} a {users[str(user.id)]['money']} $", color=0x2e60aa)
+    embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
+    await interaction.response.send_message(embed=embed)
     
+
+#pay someone
+@bot.tree.command(name="pay", description="envoyer de l'argent a un autre utilisateur")
+async def pay(interaction: discord.Interaction, receiver: discord.User, amount: int):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    if users[str(interaction.user.id)]["money"] < amount:
+        await interaction.response.send_message("tu n'as pas assez d'argent")
+    elif str(amount).startswith("-"):
+        await interaction.response.send_message("tu ne peux pas envoyer un nombre négatif d'argent")
+    else:
+        await update_politic_data(receiver, users)
+        users[str(interaction.user.id)]["money"] -= amount
+        users[str(receiver.id)]["money"] += amount
+        await interaction.response.send_message(f"{amount}$ ont étés transférés a {receiver.mention}")
+    with open("users.json", "w") as f:
+            json.dump(users, f, indent=4)
 
 
 
