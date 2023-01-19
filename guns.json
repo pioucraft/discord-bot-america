@@ -2,51 +2,51 @@
     {
         "name": "Mitrailleuse Kalachnikov",
         "description": "une arme a feu automatique qui utilise le mécanisme de l'ak-47 mais adapté pour des munitions plus puissantes",
-        "_id": "1"
+        "_id": "01"
     },
     {
         "name": "Colt M1911",
         "description": "petit pistolet semi-automatique américain qui se recharge par court recul du canon",
-        "_id": "2"
+        "_id": "02"
     },
     {
         "name": "HK MP5",
         "description": "pistolet automatique allemand souvent utilisé par la police et les services spéciaux dans le monde entier",
-        "_id": "3"
+        "_id": "03"
     },
     {
         "name": "G3",
         "description": "arme allemande qui a été dévloppé en colaboration avec les espagnols après la deuxiemme guerre mondiale",
-        "_id": "4"
+        "_id": "04"
     },
     {
         "name": "AR-15",
         "description": "arme semi-automatique légère basée sur le design du colt AR-15 avec beaucoup de variations",
-        "_id": "5"
+        "_id": "05"
     },
     {
         "name": "RPG-7",
         "description": "lance roquettes portable soviétique léger qui a été crée durant la guerre froide en 1961",
-        "_id": "6"
+        "_id": "06"
     },
     {
         "name": "UZI",
         "description": "arme automatique Israéliene designée par le major uziel uzi gal dans les anées 40 dont le design a été terminé en 1950",
-        "_id": "7"
+        "_id": "07"
     },
     {
         "name": "ak-47",
         "description": "arme soviétique automatique très connue dans le monde dont le nombre 47 fait référence a l'anée de fin de production",
-        "_id": "8"
+        "_id": "08"
     },
     {
         "name": "Thompson M192 Machine Gun",
         "description": "arme américaine disposant d'un pied pour pouvoir le poser sur le sol et pouvoir se camoufler en tirant avec ",
-        "_id": "9"
+        "_id": "09"
     },
     {
         "name": "Accuracy International Fusil Sniper AS50",
-        "description": "sniper anglais qui dispose d'une précision hors-norme et construite pour servir les armées americaines et anglaises",
+        "description": "sniper anglais qui dispose d'une précision hors-norme, construit pour servir les armées americaines et anglaises",
         "_id": "10"
     }
 ]

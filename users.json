@@ -1,24 +1,24 @@
 {
     "774910391343382558": {
-        "money": 1821,
+        "money": 1,
         "guns": {
-            "number": 0
+            "number": 2,
+            "0": {
+                "rarity": "4",
+                "basefirerate": "59",
+                "firerate": "236",
+                "_id": "05"
+            },
+            "1": {
+                "rarity": "1",
+                "basefirerate": "31",
+                "firerate": "31",
+                "_id": "09"
+            }
         },
         "politics": {
-            "number": 0
-        },
-        "experience": 2,
-        "level": 1
-    },
-    "1065605685280251954": {
-        "experience": 0,
-        "level": 1,
-        "money": 5,
-        "guns": {
-            "number": 0
-        },
-        "politics": {
-            "number": 0
+            "number": 0,
+            "lastdrop": 1674150876.4928036
         }
     }
 }
