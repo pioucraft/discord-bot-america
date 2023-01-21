@@ -196,11 +196,11 @@ async def drop(interaction: discord.interactions):
     await update_politic_data(interaction.user, users)
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
-    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] != 30 * 60:
+    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] > 30 * 60:
         with open("politics.json", "r") as f:
             politics = json.load(f)
         #get a politic
-        if random.randint(1, 1) == 2:
+        if random.randint(1, 10) == 1:
             politic = random.randint(0, 45)
             politic_name = politics[politic]["presidentName"]
             party = politics[politic]["politicalParty"]
@@ -222,7 +222,7 @@ async def drop(interaction: discord.interactions):
                 await interaction.response.send_message("tu as déja ce politicien")
 
         #get a gun
-        elif random.randint(1, 1) == 1:
+        elif random.randint(1, 5) == 1:
             with open("guns.json", "r") as f:
                 guns = json.load(f)
             gun = random.randint(0, 9)
@@ -250,7 +250,7 @@ async def drop(interaction: discord.interactions):
                 json.dump(users, f, indent=4)
 
         #get money
-        elif random.randint(1, 1) == 1:
+        else:
             money = random.randint(1, 100)
             await interaction.response.send_message(f"bravo tu as gagné {str(money)} $")
             with open("users.json", "r") as f:
@@ -291,6 +291,25 @@ async def pay(interaction: discord.Interaction, receiver: discord.User, amount: 
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
 
+#list yours guns
+@bot.tree.command(name="list_guns", description="fait une liste de toutes tes armes")
+async def list_guns(interaction: discord.Interaction):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    with open("guns.json", "r") as f:
+        guns = json.load(f)
+    guns_number = users[str(interaction.user.id)]["guns"]["number"]
+    print(guns_number)
+    message = "voici la liste des armes que tu as: \n"
+    for i in range(1, guns_number + 1):
+        gun_id = users[str(interaction.user.id)]["guns"][str(i - 1)]["_id"]
+        gun_name = guns[int(gun_id) - 1]["name"]
+        gun_damage = users[str(interaction.user.id)]["guns"][str(i - 1)]["firerate"]
+        message = message + f"{i}. {gun_name} qui fait {gun_damage} damages par seconde et dont l'id est {str(i - 1)} \n"
+    messagenumber = guns_number / 10
+    messagenumber = int()
+
+
 
 
 
@@ -305,6 +324,7 @@ async def update_politic_data(user, users):
             users[str(user.id)]["politics"] = {}
             users[str(user.id)]["politics"]["number"] = 0
             users[str(user.id)]["politics"]["lastdrop"] = 0
+            users[str(user.id)]["team"] = {}
 
 async def rarity_name(rarity):
     if rarity == 1:

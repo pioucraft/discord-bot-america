@@ -1,24 +1,241 @@
 {
     "774910391343382558": {
-        "money": 1,
+        "money": 328,
         "guns": {
-            "number": 2,
+            "number": 38,
             "0": {
-                "rarity": "4",
-                "basefirerate": "59",
-                "firerate": "236",
-                "_id": "05"
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
             },
             "1": {
-                "rarity": "1",
-                "basefirerate": "31",
-                "firerate": "31",
-                "_id": "09"
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "2": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "3": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "4": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "5": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "6": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "7": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "8": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "9": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "10": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "11": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "12": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "13": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "14": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "15": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "16": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "17": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "18": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "19": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "20": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "21": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "22": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "23": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "24": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "25": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "26": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "27": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "28": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "29": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "30": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "31": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "32": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "33": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "34": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "35": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "36": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
+            },
+            "37": {
+                "rarity": "2",
+                "basefirerate": "45",
+                "firerate": "90",
+                "_id": "10"
             }
         },
         "politics": {
-            "number": 0,
-            "lastdrop": 1674150876.4928036
+            "number": 1,
+            "lastdrop": 1674234224.7369275,
+            "ckhqkgse500120lzr6dgf1l5e": true
         }
     }
 }
