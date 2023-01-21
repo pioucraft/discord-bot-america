@@ -298,16 +298,7 @@ async def list_guns(interaction: discord.Interaction):
         users = json.load(f)
     with open("guns.json", "r") as f:
         guns = json.load(f)
-    guns_number = users[str(interaction.user.id)]["guns"]["number"]
-    print(guns_number)
-    message = "voici la liste des armes que tu as: \n"
-    for i in range(1, guns_number + 1):
-        gun_id = users[str(interaction.user.id)]["guns"][str(i - 1)]["_id"]
-        gun_name = guns[int(gun_id) - 1]["name"]
-        gun_damage = users[str(interaction.user.id)]["guns"][str(i - 1)]["firerate"]
-        message = message + f"{i}. {gun_name} qui fait {gun_damage} damages par seconde et dont l'id est {str(i - 1)} \n"
-    messagenumber = guns_number / 10
-    messagenumber = int()
+
 
 
 
