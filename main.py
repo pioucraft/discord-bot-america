@@ -197,12 +197,12 @@ async def drop(interaction: discord.interactions):
     await update_politic_data(interaction.user, users)
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
-    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] > 30 * 60:
+    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] != 30 * 60:
         with open("politics.json", "r") as f:
             politics = json.load(f)
         #get a politic
         if random.randint(1, 10) == 1:
-            politic = random.randint(0, 45)
+            politic = random.randint(0, 1)
             politic_name = politics[politic]["presidentName"]
             party = politics[politic]["politicalParty"]
             politic_id = str(politics[politic]["_id"])
@@ -213,14 +213,11 @@ async def drop(interaction: discord.interactions):
             #save the politic to the users.json
             with open("users.json", "r") as f:
                     users = json.load(f)
-            if not politic_id in users[str(interaction.user.id)]["politics"]:
-                users[str(interaction.user.id)]["politics"]["number"] += 1
-                users[str(interaction.user.id)]["politics"][politic_id] = True
+            if not politic_id in users[str(interaction.user.id)]["politics"]["list"]:
+                users[str(interaction.user.id)]["politics"]["list"].append(politic_id)
                 users[str(interaction.user.id)]["politics"]["lastdrop"] = time.time()
                 with open("users.json", "w") as f:
                     json.dump(users, f, indent=4)
-            else:
-                await interaction.response.send_message("tu as déja ce politicien")
 
         #get a gun
         elif random.randint(1, 5) == 1:
@@ -245,6 +242,8 @@ async def drop(interaction: discord.interactions):
             users[str(interaction.user.id)]["guns"][gun_id]["basefirerate"] = str(basefirerate)
             users[str(interaction.user.id)]["guns"][gun_id]["firerate"] = str(firerate)
             users[str(interaction.user.id)]["guns"][gun_id]["_id"] = guns[gun]["_id"]
+            users[str(interaction.user.id)]["guns"][gun_id]["id"] = gun_id
+
         
             users[str(interaction.user.id)]["politics"]["lastdrop"] = time.time()
             with open("users.json", "w") as f:
@@ -293,7 +292,7 @@ async def pay(interaction: discord.Interaction, receiver: discord.User, amount: 
         json.dump(users, f, indent=4)
 
 #list yours guns
-@bot.tree.command(name="list_guns", description="fait une liste de toutes tes armes")
+@bot.tree.command(name="list-guns", description="fait une liste de toutes tes armes")
 async def list_guns(interaction: discord.Interaction, page: int):
     with open("users.json", "r") as f:
         users = json.load(f)
@@ -302,13 +301,26 @@ async def list_guns(interaction: discord.Interaction, page: int):
         gun_number = users[str(interaction.user.id)]["guns"]["number"]
         message = f"voici la liste des armes que tu as à la page {page}: \n"
         show_number = (gun_number) - ((page - 1) * 10)
-        if show_number > 9:
-            show_number = 9
+        if show_number > 10:
+            show_number = 10
         for i in range (0, show_number):
             number_gun = i + ((page - 1) * 10)
-            print(str(number_gun))
+            gun_id = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["_id"])
+            gun_local_id = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["id"])
+            gun_name = guns[gun_id]["name"]
+            rarity = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["rarity"])
+            firerate = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["firerate"])
+            message = message + f"{str(number_gun + 1)}. {gun_name}, dont la rareté est {await rarity_name(rarity)}, qui fait {firerate} dégats par seconde, dont l'id global est {str(gun_id)} et dont l'id local est {str(gun_local_id)} \n"
 
-        interaction.response.send_message()
+        await interaction.response.send_message(message)
+
+#list your politics
+@bot.tree.command(name="list-politics", description="fait une liste de tous tes politiciens")
+async def list_politics(interaction: discord.Interaction):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    politics_number = int(users[str(interaction.user.id)]["politics"]["number"])
+    for i in range(0, politics_number):
 
 
 
@@ -324,7 +336,7 @@ async def update_politic_data(user, users):
             users[str(user.id)]["guns"] = {}
             users[str(user.id)]["guns"]["number"] = 0
             users[str(user.id)]["politics"] = {}
-            users[str(user.id)]["politics"]["number"] = 0
+            users[str(user.id)]["politics"]["list"] = []
             users[str(user.id)]["politics"]["lastdrop"] = 0
             users[str(user.id)]["team"] = {}
 

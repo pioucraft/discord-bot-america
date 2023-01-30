@@ -1,6 +1,6 @@
 [
     {
-      "_id": "ckhqkgs7600000lzr6gqfhfz9",
+      "_id": "0",
       "presidentName": "Joe Biden",
       "presidentElectedNumber": "46th",
       "vicePresident": "Kamala Harris",
@@ -14,7 +14,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9f00010lzrdjm5arl8",
+      "_id": "1",
       "presidentName": "Donald J. Trump",
       "presidentElectedNumber": "45th",
       "vicePresident": "Mike Pence",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9i00020lzrd2ts9bi5",
+      "_id": "2",
       "presidentName": "Barack Obama",
       "presidentElectedNumber": "44th",
       "vicePresident": "Joe Biden",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9l00030lzr70uhe7y5",
+      "_id": "3",
       "presidentName": "George W. Bush",
       "presidentElectedNumber": "43th",
       "vicePresident": "Dick Cheney",
@@ -56,7 +56,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9n00040lzr08ehh853",
+      "_id": "4",
       "presidentName": "Bill Clinton",
       "presidentElectedNumber": "42th",
       "vicePresident": "Al Gore",
@@ -70,7 +70,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9p00050lzr4mm22dgo",
+      "_id": "5",
       "presidentName": "George H. W. Bush",
       "presidentElectedNumber": "41st",
       "vicePresident": "Dan Quayle",
@@ -84,13 +84,13 @@
       ]
     },
     {
-      "_id": "ckhqkgs9s00060lzref3fahpw",
+      "_id": "6",
       "presidentName": "Ronald Reagan",
       "presidentElectedNumber": "40th",
       "vicePresident": "George H. W. Bush",
       "precededBy": "Jimmy Carter",
       "politicalParty": "Republican",
-      "dateOfBirth": "January 2, 1967 – January 6, 1975",
+      "dateOfBirth": "January 2, 1967 - January 6, 1975",
       "imgThumb": "https://www.loc.gov/static/portals/free-to-use/public-domain/presidential-portraits/40-reagan.jpg",
       "img": "https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a53000/3a53300/3a53308v.jpg",
       "tags": [
@@ -98,7 +98,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9v00070lzrh4mhf7lr",
+      "_id": "7",
       "presidentName": "Jimmy Carter",
       "presidentElectedNumber": "39th",
       "vicePresident": "Walter Mondale",
@@ -112,7 +112,7 @@
       ]
     },
     {
-      "_id": "ckhqkgs9y00080lzrdktn1hej",
+      "_id": "8",
       "presidentName": "Gerald Ford",
       "presidentElectedNumber": "38th",
       "vicePresident": "Spiro Agnew, Gerald Ford",
@@ -126,7 +126,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsa100090lzrcy5z8yzw",
+      "_id": "9",
       "presidentName": "Richard Nixon",
       "presidentElectedNumber": "37th",
       "vicePresident": "Nelson Rockefeller",
@@ -140,7 +140,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsa5000a0lzrddqlg04h",
+      "_id": "10",
       "presidentName": "Lydon B. Johnson",
       "presidentElectedNumber": "36th",
       "vicePresident": "Hubert Humphrey",
@@ -154,7 +154,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsa9000b0lzr7nrehk6a",
+      "_id": "11",
       "presidentName": "John F. Kennedy",
       "presidentElectedNumber": "35th",
       "vicePresident": "Lyndon B. Johnson",
@@ -168,7 +168,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsaf000c0lzr6yy40rty",
+      "_id": "12",
       "presidentName": "Dwight D. Eisenhower",
       "presidentElectedNumber": "34th",
       "vicePresident": "Richard Nixon",
@@ -182,7 +182,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsaj000d0lzr2vwza41i",
+      "_id": "13",
       "presidentName": "Harry S. Truman",
       "presidentElectedNumber": "33th",
       "vicePresident": "Alben W. Barkley",
@@ -196,7 +196,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsan000e0lzr2wkzgovl",
+      "_id": "14",
       "presidentName": "Franklin D. Roosevelt",
       "presidentElectedNumber": "32th",
       "vicePresident": "Henry A. Wallace",
@@ -210,7 +210,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsar000f0lzrhwsq1ij8",
+      "_id": "15",
       "presidentName": "Herbert Hoover",
       "presidentElectedNumber": "31st",
       "vicePresident": "Charles Curtis",
@@ -224,7 +224,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsav000g0lzr7wjh790z",
+      "_id": "16",
       "presidentName": "Calvin Coolidge",
       "presidentElectedNumber": "30th",
       "vicePresident": "Charles G. Dawes",
@@ -238,7 +238,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsb2000h0lzr14by8z3r",
+      "_id": "17",
       "presidentName": "Warren G. Harding",
       "presidentElectedNumber": "29th",
       "vicePresident": "Calvin Coolidge",
@@ -252,7 +252,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsb7000i0lzr4sakhswr",
+      "_id": "18",
       "presidentName": "Woodrow Wilson",
       "presidentElectedNumber": "28th",
       "vicePresident": "Thomas R. Marshall",
@@ -263,7 +263,7 @@
       "img": "https://tile.loc.gov/storage-services/service/pnp/cph/3a50000/3a55000/3a55000/3a55007v.jpg"
     },
     {
-      "_id": "ckhqkgsbf000j0lzr0i8932bh",
+      "_id": "19",
       "presidentName": "William Howard Taft",
       "presidentElectedNumber": "27th",
       "vicePresident": "James S. Sherman",
@@ -277,7 +277,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsbj000k0lzr5x1id6hp",
+      "_id": "20",
       "presidentName": "Theodore Roosevelt",
       "presidentElectedNumber": "26th",
       "vicePresident": "Charles W. Fairbanks",
@@ -291,7 +291,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsbo000l0lzr3cbwgkz0",
+      "_id": "21",
       "presidentName": "William McKinley",
       "presidentElectedNumber": "25th",
       "vicePresident": "Garret Hobart",
@@ -305,7 +305,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsbt000m0lzrc8g6h5dg",
+      "_id": "22",
       "presidentName": "Benjamin Harrison",
       "presidentElectedNumber": "23rd",
       "vicePresident": "Levi P. Morton",
@@ -319,7 +319,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsbz000n0lzr1w4g4ya3",
+      "_id": "23",
       "presidentName": "Grover Cleveland",
       "presidentElectedNumber": "22nd and 24th",
       "vicePresident": "Adlai Stevenson I",
@@ -333,7 +333,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsc3000o0lzrhm4ocr7z",
+      "_id": "24",
       "presidentName": "Chester A. Arthur",
       "presidentElectedNumber": "21st",
       "vicePresident": "None",
@@ -347,7 +347,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsc8000p0lzrfqp63ids",
+      "_id": "25",
       "presidentName": "James Garfield",
       "presidentElectedNumber": "20th",
       "vicePresident": "Chester A. Arthur",
@@ -361,7 +361,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsce000q0lzrcy6e995h",
+      "_id": "26",
       "presidentName": "Rutherford B. Hayes",
       "presidentElectedNumber": "19th",
       "vicePresident": "William A. Wheeler",
@@ -375,7 +375,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsch000r0lzrd3qv1303",
+      "_id": "27",
       "presidentName": "Ulysses S. Grant",
       "presidentElectedNumber": "18th",
       "vicePresident": "Schuyler Colfax",
@@ -389,7 +389,7 @@
       ]
     },
     {
-      "_id": "ckhqkgscl000s0lzrfahnh6id",
+      "_id": "28",
       "presidentName": "Andrew Johnson",
       "presidentElectedNumber": "17th",
       "vicePresident": "None",
@@ -403,7 +403,7 @@
       ]
     },
     {
-      "_id": "ckhqkgscs000t0lzr6b3khokf",
+      "_id": "29",
       "presidentName": "Abraham Lincoln",
       "presidentElectedNumber": "16th",
       "vicePresident": "Hannibal Hamlin",
@@ -417,7 +417,7 @@
       ]
     },
     {
-      "_id": "ckhqkgscv000u0lzrfzu1d6cl",
+      "_id": "30",
       "presidentName": "James Buchanan",
       "presidentElectedNumber": "15th",
       "vicePresident": "John C. Breckinridge",
@@ -431,7 +431,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsd5000v0lzr5r9s0mk4",
+      "_id": "31",
       "presidentName": "Franklin Pierce",
       "presidentElectedNumber": "14th",
       "vicePresident": "William R. King",
@@ -445,7 +445,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsde000w0lzr9oee6sh5",
+      "_id": "32",
       "presidentName": "Millard Fillmore",
       "presidentElectedNumber": "13th",
       "vicePresident": "None",
@@ -459,7 +459,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsdk000x0lzr3zp395yu",
+      "_id": "33",
       "presidentName": "Zachary Taylor",
       "presidentElectedNumber": "12th",
       "vicePresident": "Millard Fillmore",
@@ -473,7 +473,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsdo000y0lzr8v0jaf70",
+      "_id": "34",
       "presidentName": "James K. Polk",
       "presidentElectedNumber": "11th",
       "vicePresident": "George M. Dallas",
@@ -487,7 +487,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsdt000z0lzrekqohqsr",
+      "_id": "35",
       "presidentName": "John Tyler",
       "presidentElectedNumber": "10th",
       "vicePresident": "None",
@@ -501,7 +501,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsdw00100lzr117z5eig",
+      "_id": "36",
       "presidentName": "William Henry Harrison",
       "presidentElectedNumber": "09th",
       "vicePresident": "John Tyler",
@@ -515,7 +515,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsdz00110lzr4oahdkan",
+      "_id": "37",
       "presidentName": "Martin Van Buren",
       "presidentElectedNumber": "08th",
       "vicePresident": "Richard Mentor Johnson",
@@ -529,7 +529,7 @@
       ]
     },
     {
-      "_id": "ckhqkgse500120lzr6dgf1l5e",
+      "_id": "38",
       "presidentName": "Andrew Jackson",
       "presidentElectedNumber": "07th",
       "vicePresident": "John C. Calhoun",
@@ -543,7 +543,7 @@
       ]
     },
     {
-      "_id": "ckhqkgseb00130lzre2kg602a",
+      "_id": "39",
       "presidentName": "John Quincy Adams",
       "presidentElectedNumber": "06th",
       "vicePresident": "John C. Calhoun",
@@ -557,7 +557,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsee00140lzr7y3d0v4y",
+      "_id": "40",
       "presidentName": "James Monroe",
       "presidentElectedNumber": "05th",
       "vicePresident": "Daniel D. Tompkins",
@@ -571,7 +571,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsen00150lzr2ir68xk5",
+      "_id": "41",
       "presidentName": "James Madison",
       "presidentElectedNumber": "04th",
       "vicePresident": "George Clinton",
@@ -585,7 +585,7 @@
       ]
     },
     {
-      "_id": "ckhqkgseu00160lzr6ndthf4k",
+      "_id": "42",
       "presidentName": "Thomas Jefferson",
       "presidentElectedNumber": "03rd",
       "vicePresident": "Aaron Burr",
@@ -599,7 +599,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsf900170lzr29c7czq8",
+      "_id": "43",
       "presidentName": "John Adams",
       "presidentElectedNumber": "02nd",
       "vicePresident": "Thomas Jefferson",
@@ -613,7 +613,7 @@
       ]
     },
     {
-      "_id": "ckhqkgsfi00180lzre5l87l90",
+      "_id": "44",
       "presidentName": "George Washington",
       "presidentElectedNumber": "1st",
       "vicePresident": "John Adams",
