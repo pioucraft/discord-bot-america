@@ -10,7 +10,7 @@
                 "_id": "10"
             },
             "1": {
-                "rarity": "2",
+                "rarity": "3",
                 "basefirerate": "45",
                 "firerate": "90",
                 "_id": "10"
@@ -22,7 +22,7 @@
                 "_id": "10"
             },
             "3": {
-                "rarity": "2",
+                "rarity": "4",
                 "basefirerate": "45",
                 "firerate": "90",
                 "_id": "10"
@@ -30,7 +30,7 @@
             "4": {
                 "rarity": "2",
                 "basefirerate": "45",
-                "firerate": "90",
+                "firerate": "97",
                 "_id": "10"
             },
             "5": {

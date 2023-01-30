@@ -7,6 +7,7 @@ import youtube_dl
 import json
 import random
 import time
+import math
 
 
 #set the client and the chdir
@@ -293,11 +294,21 @@ async def pay(interaction: discord.Interaction, receiver: discord.User, amount: 
 
 #list yours guns
 @bot.tree.command(name="list_guns", description="fait une liste de toutes tes armes")
-async def list_guns(interaction: discord.Interaction):
+async def list_guns(interaction: discord.Interaction, page: int):
     with open("users.json", "r") as f:
         users = json.load(f)
     with open("guns.json", "r") as f:
         guns = json.load(f)
+        gun_number = users[str(interaction.user.id)]["guns"]["number"]
+        message = f"voici la liste des armes que tu as à la page {page}: \n"
+        show_number = (gun_number) - ((page - 1) * 10)
+        if show_number > 9:
+            show_number = 9
+        for i in range (0, show_number):
+            number_gun = i + ((page - 1) * 10)
+            print(str(number_gun))
+
+        interaction.response.send_message()
 
 
 
