@@ -201,8 +201,8 @@ async def drop(interaction: discord.interactions):
         with open("politics.json", "r") as f:
             politics = json.load(f)
         #get a politic
-        if random.randint(1, 10) == 1:
-            politic = random.randint(0, 1)
+        if random.randint(1, 1) == 1:
+            politic = random.randint(0, 45)
             politic_name = politics[politic]["presidentName"]
             party = politics[politic]["politicalParty"]
             politic_id = str(politics[politic]["_id"])
@@ -319,10 +319,22 @@ async def list_guns(interaction: discord.Interaction, page: int):
 async def list_politics(interaction: discord.Interaction):
     with open("users.json", "r") as f:
         users = json.load(f)
-    politics_number = int(users[str(interaction.user.id)]["politics"]["number"])
+    with open("politics.json", "r") as f:
+        politics = json.load(f)
+    politics_number = len(users[str(interaction.user.id)]["politics"]["list"])
+    message = "les politiciens que tu as sont \n"
     for i in range(0, politics_number):
+        politic_id = users[str(interaction.user.id)]["politics"]["list"][i]
+        politic_name = politics[int(politic_id)]["presidentName"]
+        print(str(politic_id))
+        print(politic_name)
+        message = message + f"{politic_name} dont l'id est {politic_id}, \n"
+    await interaction.response.send_message(message)
 
 
+#build a team for "story mode"
+@bot.tree.command(name="build-team", description="construit ton équipe pour le 'mode histoire'")
+async def team_builder(interaction: discord.Interaction, slot: int)
 
 
 
