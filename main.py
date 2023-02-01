@@ -13,7 +13,7 @@ import math
 #set the client and the chdir
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix = "!?!", intents = intents)
-os.chdir(r"/home/pioucraft/Documents/programinc/discord-bot-main/")
+os.chdir(r"/home/emmanuel_macron/Documents/programinc/discord-bot-main/")
 
 #initialize the bot
 @bot.event
@@ -285,8 +285,8 @@ async def pay(interaction: discord.Interaction, receiver: discord.User, amount: 
         await interaction.response.send_message("tu ne peux pas envoyer un nombre négatif d'argent")
     else:
         await update_politic_data(receiver, users)
-        users[str(interaction.user.id)]["money"] -= amount
         users[str(receiver.id)]["money"] += amount
+        users[str(interaction.user.id)]["money"] -= amount
         await interaction.response.send_message(f"{amount}$ ont étés transférés a {receiver.mention}")
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
@@ -307,10 +307,10 @@ async def list_guns(interaction: discord.Interaction, page: int):
             number_gun = i + ((page - 1) * 10)
             gun_id = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["_id"])
             gun_local_id = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["id"])
-            gun_name = guns[gun_id]["name"]
+            gun_name = guns[gun_id - 1]["name"]
             rarity = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["rarity"])
             firerate = int(users[str(interaction.user.id)]["guns"][str(number_gun)]["firerate"])
-            message = message + f"{str(number_gun + 1)}. {gun_name}, dont la rareté est {await rarity_name(rarity)}, qui fait {firerate} dégats par seconde, dont l'id global est {str(gun_id)} et dont l'id local est {str(gun_local_id)} \n"
+            message = message + f"{str(number_gun + 1)}. {gun_name}, dont la rareté est {await rarity_name(rarity)}, qui fait {firerate} dégats par seconde et dont l'id est {str(gun_local_id)} \n"
 
         await interaction.response.send_message(message)
 
@@ -326,15 +326,41 @@ async def list_politics(interaction: discord.Interaction):
     for i in range(0, politics_number):
         politic_id = users[str(interaction.user.id)]["politics"]["list"][i]
         politic_name = politics[int(politic_id)]["presidentName"]
-        print(str(politic_id))
-        print(politic_name)
         message = message + f"{politic_name} dont l'id est {politic_id}, \n"
     await interaction.response.send_message(message)
+
+#send a gun to someone
+@bot.tree.command(name="send-gun", description="envoie une de tes armes à un de tes amis")
+async def send_gun(interaction: discord.Interaction, receiver: discord.User, gun_id: int):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    if not str(gun_id) in users[str(interaction.user.id)]["guns"]:
+        await interaction.response.send_message(f"tu n'as pas d'arme avec l'id {gun_id}")
+    else:
+        await update_politic_data(receiver, users)
+        new_id = users[str(receiver.id)]["guns"]["number"]
+        users[str(receiver.id)]["guns"][str(new_id)] = {}
+        users[str(receiver.id)]["guns"]["number"] += 1
+        users[str(receiver.id)]["guns"][str(new_id)]["rarity"] = users[str(interaction.user.id)]["guns"][str(gun_id)]["rarity"]
+        users[str(receiver.id)]["guns"][str(new_id)]["basefirerate"] = users[str(interaction.user.id)]["guns"][str(gun_id)]["basefirerate"]
+        users[str(receiver.id)]["guns"][str(new_id)]["firerate"] = users[str(interaction.user.id)]["guns"][str(gun_id)]["firerate"]
+        users[str(receiver.id)]["guns"][str(new_id)]["_id"] = users[str(interaction.user.id)]["guns"][str(gun_id)]["_id"]
+        users[str(receiver.id)]["guns"][str(new_id)]["id"] = new_id
+        users[str(interaction.user.id)]["guns"][str(gun_id)]["rarity"] = "5"
+        users[str(interaction.user.id)]["guns"][str(gun_id)]["basefirerate"] = "1"
+        users[str(interaction.user.id)]["guns"][str(gun_id)]["firerate"] = "1"
+        users[str(interaction.user.id)]["guns"][str(gun_id)]["_id"] = "1"
+    with open("users.json", "w") as f:
+        json.dump(users, f, indent=4)
 
 
 #build a team for "story mode"
 @bot.tree.command(name="build-team", description="construit ton équipe pour le 'mode histoire'")
-async def team_builder(interaction: discord.Interaction, slot: int)
+async def team_builder(interaction: discord.Interaction, slot: int, gun_id: int):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    if slot > 5:
+        await interaction.response.send_message(f"tu as séléctioné le slot {slot} mais le slot maximum est 5")
 
 
 

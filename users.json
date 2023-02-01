@@ -1,28 +1,49 @@
 {
     "774910391343382558": {
-        "money": 4,
+        "money": 797,
         "guns": {
-            "number": 0
+            "number": 2,
+            "0": {
+                "rarity": "5",
+                "basefirerate": "1",
+                "firerate": "1",
+                "_id": "1",
+                "id": 0
+            },
+            "1": {
+                "rarity": "4",
+                "basefirerate": "80",
+                "firerate": "320",
+                "_id": "02",
+                "id": 1
+            }
         },
         "politics": {
             "list": [
-                "1",
-                "0",
-                "43",
-                "31",
-                "13",
-                "1",
-                "0",
-                "43",
-                "31",
-                "13",
-                "1",
-                "0"
+                "27",
+                "14",
+                "3"
             ],
-            "lastdrop": 1675096521.606121
+            "lastdrop": 1675273692.5185933
         },
-        "team": {},
-        "experience": 19,
-        "level": 2
+        "team": {}
+    },
+    "1065605685280251954": {
+        "money": 1,
+        "guns": {
+            "number": 1,
+            "0": {
+                "rarity": "5",
+                "basefirerate": "56",
+                "firerate": "280",
+                "_id": "05",
+                "id": 0
+            }
+        },
+        "politics": {
+            "list": [],
+            "lastdrop": 0
+        },
+        "team": {}
     }
 }
