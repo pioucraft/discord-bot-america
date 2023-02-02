@@ -27,6 +27,18 @@ async def on_ready():
         print(f"failed to sync commands: {e}")
 
 
+#help command
+@bot.tree.command(name=f"help", description="montre l'aide")
+async def help(interaction: discord.Interaction):
+    embed = discord.Embed(type = "rich", title = "help", description = f"1. /play: joue une musique de youtube dans le salon vocal  \n 2. /stop: arêtte la musique et quitte le salon vocal \n 3. /level montre le niveau d'un membre \n 4. /exactlevel: montre le niveau exact d'un membre en utilisant des décimales \n 5. utilise /help-politics pour montre l'aide en rapport avec le jeu des politiciens \n JE RAPELLE QUE LE BOT EST EN BÊTA ET QU'IL PEUT Y AVOIR DES BUGS, SI VOUS TROUVEZ UN BUG OU UNE INCOHÉRENCE MERCI DE LE REPORTER A UN ADMIN.", color=0x2e60aa)
+    await interaction.response.send_message(embed=embed)
+
+#/help politics command
+@bot.tree.command(name=f"help-politics", description="montre l'aide en rapport avec le jeu des politiciens")
+async def help_politics(interaction: discord.Interaction):
+    embed = discord.Embed(type = "rich", title = "help", description = f"le jeu des politiciens est un jeu qui vous permet de collectionner des politiciens, des armes et de l'argent grâce a discord. \n Pour gagner de l'argent il suffit de faire /drop ou de parler dans le chat, la commande /drop vous permet aussi si vous avez de la chance de gagner une arme ou bien même mieux un politicien américain. \n Ensuite vous pouvez utiliser /money pour voir toute votre fortune et /pay pour envoyer de l'argent à un autre utilisateur. \n Pour voir vos armes il suffi de faire /list-guns et /show-gun pour voir une arme spécifique. Vous pouvez aussi envoyer des armes avec la commande /send-gun. \n Les politiciens dont vous êtes propriétaires peuvent êtres listés avec /list-politics mais si vous voulez voir les informations concernants un politicien précis il faudra utiliser /show-politic. \n plus tard il y aura une commande /shop pour acheter des objets et aussi un mode 'histoire'. \n JE RAPELLE QUE LE BOT EST EN BÊTA ET QU'IL PEUT Y AVOIR DES BUGS, SI VOUS TROUVEZ UN BUG OU UNE INCOHÉRENCE MERCI DE LE REPORTER A UN ADMIN.", color=0x2e60aa)
+    await interaction.response.send_message(embed=embed)
+
 
 #/play command
 @bot.tree.command(name=f"play", description="le bot va jouer la musique de ton choix")
@@ -123,6 +135,7 @@ async def on_message(message):
                 letters = 40
             await update_data(users, message.author, letters)
             users[str(message.author.id)]["experience"] = users[str(message.author.id)]["experience"] + letters
+            users[str(message.author.id)]["experience"] = users[str(message.author.id)]["money"] + letters
             await level_up(users, message.author, message.channel)
 
             with open("users.json", "w") as f:
