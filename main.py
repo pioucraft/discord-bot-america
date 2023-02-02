@@ -136,8 +136,9 @@ async def on_message(message):
             if letters > 40:
                 letters = 40
             await update_data(users, message.author, letters)
+            await update_politic_data(message.author, users)
             users[str(message.author.id)]["experience"] = users[str(message.author.id)]["experience"] + letters
-            users[str(message.author.id)]["experience"] = users[str(message.author.id)]["money"] + letters
+            users[str(message.author.id)]["money"] = users[str(message.author.id)]["money"] + letters
             await level_up(users, message.author, message.channel)
 
             with open("users.json", "w") as f:
