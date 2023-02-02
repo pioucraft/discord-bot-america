@@ -1,49 +1,91 @@
 {
     "774910391343382558": {
-        "money": 797,
+        "money": 494,
         "guns": {
-            "number": 2,
+            "number": 10,
             "0": {
-                "rarity": "5",
-                "basefirerate": "1",
-                "firerate": "1",
-                "_id": "1",
+                "rarity": "4",
+                "basefirerate": "97",
+                "firerate": "388",
+                "_id": "06",
                 "id": 0
             },
             "1": {
-                "rarity": "4",
-                "basefirerate": "80",
-                "firerate": "320",
-                "_id": "02",
+                "rarity": "5",
+                "basefirerate": "10",
+                "firerate": "50",
+                "_id": "07",
                 "id": 1
+            },
+            "2": {
+                "rarity": "5",
+                "basefirerate": "87",
+                "firerate": "435",
+                "_id": "07",
+                "id": 2
+            },
+            "3": {
+                "rarity": "5",
+                "basefirerate": "41",
+                "firerate": "205",
+                "_id": "05",
+                "id": 3
+            },
+            "4": {
+                "rarity": "3",
+                "basefirerate": "11",
+                "firerate": "33",
+                "_id": "04",
+                "id": 4
+            },
+            "5": {
+                "rarity": "5",
+                "basefirerate": "24",
+                "firerate": "120",
+                "_id": "03",
+                "id": 5
+            },
+            "6": {
+                "rarity": "5",
+                "basefirerate": "70",
+                "firerate": "350",
+                "_id": "08",
+                "id": 6
+            },
+            "7": {
+                "rarity": "3",
+                "basefirerate": "78",
+                "firerate": "234",
+                "_id": "02",
+                "id": 7
+            },
+            "8": {
+                "rarity": "4",
+                "basefirerate": "62",
+                "firerate": "248",
+                "_id": "05",
+                "id": 8
+            },
+            "9": {
+                "rarity": "3",
+                "basefirerate": "26",
+                "firerate": "78",
+                "_id": "05",
+                "id": 9
             }
         },
         "politics": {
             "list": [
-                "27",
-                "14",
-                "3"
+                "38",
+                "24",
+                "26"
             ],
-            "lastdrop": 1675273692.5185933
+            "lastdrop": 1675335333.9877167
         },
-        "team": {}
-    },
-    "1065605685280251954": {
-        "money": 1,
-        "guns": {
-            "number": 1,
-            "0": {
-                "rarity": "5",
-                "basefirerate": "56",
-                "firerate": "280",
-                "_id": "05",
-                "id": 0
-            }
+        "team": {
+            "0": 9
         },
-        "politics": {
-            "list": [],
-            "lastdrop": 0
-        },
-        "team": {}
+        "experience": 12,
+        "level": 1
     }
 }

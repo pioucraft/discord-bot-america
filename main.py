@@ -201,7 +201,7 @@ async def drop(interaction: discord.interactions):
         with open("politics.json", "r") as f:
             politics = json.load(f)
         #get a politic
-        if random.randint(1, 1) == 1:
+        if random.randint(1, 10) == 1:
             politic = random.randint(0, 45)
             politic_name = politics[politic]["presidentName"]
             party = politics[politic]["politicalParty"]
@@ -373,6 +373,7 @@ async def show_gun(interaction: discord.Interaction, gun_id: int):
         embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
         await interaction.response.send_message(embed=embed)
 
+#show a politic
 @bot.tree.command(name="show-politic", description="montre les informations a propos d'un politicien spécifique")
 async def show_politic(interaction: discord.Interaction, politic_id: int):   
     with open("politics.json", "r") as f:
@@ -385,15 +386,8 @@ async def show_politic(interaction: discord.Interaction, politic_id: int):
     embed = discord.Embed(type = "rich", title = politic_name, description = f"{politic_name} dont le vice président est {politic_vice_president} est le {politic_elected_number} président des états-unis, est du parti {politic_party} et est né le {politic_birth}", color=0x2e60aa)
     embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
     await interaction.response.send_message(embed=embed)
-    
 
-#build a team for "story mode"
-@bot.tree.command(name="build-team", description="construit ton équipe pour le 'mode histoire'")
-async def team_builder(interaction: discord.Interaction, slot: int, gun_id: int):
-    with open("users.json", "r") as f:
-        users = json.load(f)
-    if slot > 5:
-        await interaction.response.send_message(f"tu as séléctioné le slot {slot} mais le slot maximum est 5")
+
 
 
 
@@ -409,7 +403,7 @@ async def update_politic_data(user, users):
             users[str(user.id)]["politics"] = {}
             users[str(user.id)]["politics"]["list"] = []
             users[str(user.id)]["politics"]["lastdrop"] = 0
-            users[str(user.id)]["team"] = {}
+            team = {}
 
 async def rarity_name(rarity):
     if rarity == 1:
