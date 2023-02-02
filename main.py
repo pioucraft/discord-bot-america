@@ -120,8 +120,10 @@ async def on_message(message):
     message.content = message.content.replace("kwa", "quoi")
     message.content = message.content.replace("qwa", "quoi")
     message.content = message.content.replace("koi", "quoi")
+    message.content = message.content.replace("qoi", "quoi")
     message.content = message.content.replace("kaka", "caca")
     message.content = message.content.replace("oe", "ouais")
+    message.content = message.content.replace("ouai", "ouais")
     message.content = message.content.replace(" ", "")
     message.content = message.content.replace("!", "")
     message.content = message.content.replace("?", "")
@@ -210,7 +212,7 @@ async def drop(interaction: discord.interactions):
     await update_politic_data(interaction.user, users)
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
-    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] != 30 * 60:
+    if time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"] > 30 * 60:
         with open("politics.json", "r") as f:
             politics = json.load(f)
         #get a politic
