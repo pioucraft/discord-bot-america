@@ -353,6 +353,39 @@ async def send_gun(interaction: discord.Interaction, receiver: discord.User, gun
     with open("users.json", "w") as f:
         json.dump(users, f, indent=4)
 
+#view a specific gun
+@bot.tree.command(name="show-gun", description="montre les informations a propos d'une amre spécifique que tu as")
+async def show_gun(interaction: discord.Interaction, gun_id: int):
+    with open("users.json", "r") as f:
+        users = json.load(f)
+    with open("guns.json", "r") as f:
+        guns = json.load(f)
+    if not str(gun_id) in users[str(interaction.user.id)]["guns"]:
+        await interaction.response.send_message("tu n'as pas d'arme avec cet id")
+    else:
+        gun_global_id = users[str(interaction.user.id)]["guns"][str(gun_id)]["_id"]
+        firerate = users[str(interaction.user.id)]["guns"][str(gun_id)]["firerate"]
+        basefirerate = users[str(interaction.user.id)]["guns"][str(gun_id)]["basefirerate"]
+        rarity = users[str(interaction.user.id)]["guns"][str(gun_id)]["rarity"]
+        gun_name = guns[int(gun_global_id) - 1]["name"]
+        gun_description = guns[int(gun_global_id) - 1]["description"]
+        embed = discord.Embed(type = "rich", title = gun_name, description = f"{gun_name} qui est de rareté {await rarity_name(int(rarity))}, qui fait {basefirerate} dégats par secondes de base, qui grâce à sa rareté fait {firerate} dégats par secondes et dont la description est: {gun_description}", color=0x2e60aa)
+        embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
+        await interaction.response.send_message(embed=embed)
+
+@bot.tree.command(name="show-politic", description="montre les informations a propos d'un politicien spécifique")
+async def show_politic(interaction: discord.Interaction, politic_id: int):   
+    with open("politics.json", "r") as f:
+        politics = json.load(f)
+    politic_name = politics[politic_id]["presidentName"]
+    politic_elected_number = politics[politic_id]["presidentElectedNumber"]
+    politic_vice_president = politics[politic_id]["vicePresident"]
+    politic_party = politics[politic_id]["politicalParty"]
+    politic_birth = politics[politic_id]["dateOfBirth"]
+    embed = discord.Embed(type = "rich", title = politic_name, description = f"{politic_name} dont le vice président est {politic_vice_president} est le {politic_elected_number} président des états-unis, est du parti {politic_party} et est né le {politic_birth}", color=0x2e60aa)
+    embed.set_image(url = "https://media.tenor.com/iS-rIkKhpMgAAAAd/god-bless-america-american-flag.gif")
+    await interaction.response.send_message(embed=embed)
+    
 
 #build a team for "story mode"
 @bot.tree.command(name="build-team", description="construit ton équipe pour le 'mode histoire'")
