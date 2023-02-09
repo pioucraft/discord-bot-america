@@ -7,14 +7,14 @@ import youtube_dl
 import json
 import random
 import time
-import math
+import requests
 
 
 #set the client and the chdir
-token = token
+token = 
 intents = discord.Intents().all()
 bot = commands.Bot(command_prefix = "!?!", intents = intents)
-os.chdir(r"/home/server launched/discord-bot-main/")
+os.chdir(r"/home/emmanuel_macron/Documents/programinc/discord-bot-main/")
 
 #initialize the bot
 @bot.event
@@ -34,7 +34,7 @@ async def help(interaction: discord.Interaction):
     if not interaction.channel.guild:
         print("quelqu'un a essayé de dm le bot")
     else:
-        embed = discord.Embed(type = "rich", title = "help", description = f"1. /play: joue une musique de youtube dans le salon vocal  \n 2. /stop: arêtte la musique et quitte le salon vocal \n 3. /level montre le niveau d'un membre \n 4. /exactlevel: montre le niveau exact d'un membre en utilisant des décimales \n 5. utilise /help-politics pour montre l'aide en rapport avec le jeu des politiciens \n JE RAPELLE QUE LE BOT EST EN BÊTA ET QU'IL PEUT Y AVOIR DES BUGS, SI VOUS TROUVEZ UN BUG OU UNE INCOHÉRENCE MERCI DE LE REPORTER A UN ADMIN.", color=0x2e60aa)
+        embed = discord.Embed(type = "rich", title = "help", description = f"1. /play: joue une musique de youtube dans le salon vocal  \n 2. /stop: arêtte la musique et quitte le salon vocal \n 3. /level montre le niveau d'un membre \n 4. /exactlevel: montre le niveau exact d'un membre en utilisant des décimales \n 5. /meme: génère un même aléatoire (provenant de r/rance). \n 6. utilise /help-politics pour montre l'aide en rapport avec le jeu des politiciens \n JE RAPELLE QUE LE BOT EST EN BÊTA ET QU'IL PEUT Y AVOIR DES BUGS, SI VOUS TROUVEZ UN BUG OU UNE INCOHÉRENCE MERCI DE LE REPORTER A UN ADMIN.", color=0x2e60aa)
         await interaction.response.send_message(embed=embed)
 
 #/help politics command
@@ -452,9 +452,6 @@ async def show_politic(interaction: discord.Interaction, politic_id: int):
 
 
 
-
-
-
 async def update_politic_data(user, users):
     if not user.bot:
         if not str(user.id) in users:
@@ -480,6 +477,35 @@ async def rarity_name(rarity):
     elif rarity == 5:
         rarity = "legendary"
     return rarity
+
+
+
+'''
+
+end politics part
+
+'''
+
+
+
+
+'''
+
+here we have some stupid features
+
+'''
+
+#/meme command
+@bot.tree.command(name="meme", description="va récuperer un même aléatoire sur https://meme-api.com/gimme")
+async def meme(interacton: discord.Interaction):
+    meme_json = json.loads(requests.get("https://meme-api.com/gimme/rance/").content)
+    while meme_json["nsfw"] or meme_json["spoiler"] == True:
+        meme_json = json.loads(requests.get("https://meme-api.com/gimme/rance/").content)
+    embed = discord.Embed(type="rich", title = meme_json["title"], description= meme_json["postLink"], color=0x2e60aa)
+    embed.set_image(url = meme_json["url"])
+    await interacton.response.send_message(embed=embed)
+    
+    
 
 #run the bot with the token
 bot.run(token)
