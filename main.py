@@ -302,6 +302,7 @@ async def drop(interaction: discord.interactions):
                 users[str(interaction.user.id)]["money"] = int(users[str(interaction.user.id)]["money"]) + money
                 with open("users.json", "w") as f:
                     json.dump(users, f, indent=4)
+                time.sleep(0.1)
 
         else: 
             waitime = int(30 - ((time.time() - users[str(interaction.user.id)]["politics"]["lastdrop"]) / 60)) 
